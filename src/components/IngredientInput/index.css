@@ -1,0 +1,39 @@
+.ingredientInput { 
+    grid-area: 1 / 1 / 6 / 2; 
+    background-color: #a8754e;
+    border-radius: 0px;
+    margin: 1vmin;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;    
+}
+
+.ingredientDiv{
+    height: 5%;
+    width: 90%;
+    margin-top: 1vmin;
+    padding: .5vmin;
+    text-align: center;
+    font-size: 2.5vw;
+    color: black;
+    background-color: antiquewhite;
+    border: .5vmin solid rgb(195, 130, 45);
+    border-radius: 1vmin;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.removeIngredient{
+    background-color:brown;
+    border: .1vmin solid #432b19;
+    height: 50%;
+    border-radius: 4px;
+}
+

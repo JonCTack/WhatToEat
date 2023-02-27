@@ -2,25 +2,15 @@
   text-align: center;
   background-color: #432b19;
   min-height: 100vh;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  grid-column-gap: .5vmin;
-  grid-row-gap: .5vmin;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.ingredientInput { 
-  grid-area: 1 / 1 / 6 / 2; 
-  background-color: #a8754e;
-  border-radius: 50px;
-  margin: 1vmin;
-}
+
+
 .searchAndSet{ 
   grid-area: 1 / 2 / 2 / 6; 
   border-bottom: 1vmin solid #a8754e;
 }
+
 .recipeList {
   grid-area: 2 / 2 / 6 / 6;
   display: flex;
@@ -28,6 +18,7 @@
   align-items: center;
   justify-content: flex-start;
   flex-wrap: wrap;
+  overflow: auto;
 }
 
 

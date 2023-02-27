@@ -1,18 +1,15 @@
 import './App.css';
-import IngredientInput from './components/IngredientInput';
-import RecipeList from './components/RecipeList';
-import SearchButton from './components/SearchButton';
-import SetIngredients from './components/SetIngredients';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import Recipe from './pages/recipe';
+import Search from './pages/search';
 
 function App() {
   return (
     <div className="App">
-      <IngredientInput/>
-      <div className='searchAndSet'>
-      <SetIngredients/>
-      <SearchButton/>
-      </div>
-      <RecipeList/>
+      <Routes>
+        <Route path='/recipe/:recipeId' element={<Recipe/>}/>
+        <Route path='/*' element={<Search/>}/>
+      </Routes>
     </div>
   );
 }

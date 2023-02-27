@@ -28,6 +28,7 @@ const Search = () => {
             value={ingredientString}
             onChange={(event) => handleChange(event)}
             />
+            <button onClick={(event) => handleSubmit(event)}>Submit Ingredient</button>
         </form>
     </section>
   )

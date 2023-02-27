@@ -1,0 +1,19 @@
+.recipeScreen{
+    height: 100%;
+    display: flex;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ingredientList{
+    display: inline;
+}
+
+.recipeSummary{
+    display: inline;
+}

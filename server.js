@@ -23,6 +23,13 @@ app.get(`/get_recipe/:ingredients`, async (req, res) => {
     let apiResponse = await axios(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${process.env.APIKEY}&number=2&ranking=1&ingredients=${ingredients}`)
     res.json(apiResponse.data)
 })
+app.get(`/get_instructions/:recipeId`, async (req, res) => {
+    let recipeId = req.params.recipeId
+    let apiInfoResponse = await axios(`https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${process.env.APIKEY}&includeNutrition=false`)
+    // let apiInstructResponse = await axios(`https://api.spoonacular.com/recipes/${recipeId}/analyzedInstructions?apiKey=${process.env.APIKEY}`)
+    console.log(apiInfoResponse.data)
+    res.json(apiInfoResponse.data)
+})
 
 app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));

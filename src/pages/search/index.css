@@ -1,0 +1,10 @@
+.searchScreen{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: .5vmin;
+    grid-row-gap: .5vmin;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { AppContext } from '../../contexts/app_context'
+import './index.css'
 
 const IngredientInput = () => {
 
@@ -14,9 +15,9 @@ const IngredientInput = () => {
 
 let ingredientsJSX = ingredients.map((el, i) => {
   //the ingredients array is a user input of just ingredients 
-    return (<div key={JSON.stringify(el)}>
-                {el}
-                <button onClick={(el) => removeButton(i)}>-</button>
+    return (<div key={JSON.stringify(el)} className='ingredientDiv'>
+                {el.toLowerCase()}
+                <button className='removeIngredient' onClick={(el) => removeButton(i)}>-</button>
             </div>)
 })
 
