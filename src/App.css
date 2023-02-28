@@ -2,24 +2,12 @@
   text-align: center;
   background-color: #432b19;
   min-height: 100vh;
-}
-
-
-
-.searchAndSet{ 
-  grid-area: 1 / 2 / 2 / 6; 
-  border-bottom: 1vmin solid #a8754e;
-}
-
-.recipeList {
-  grid-area: 2 / 2 / 6 / 6;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  overflow: auto;
+  justify-content: space-around;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
-
 
 

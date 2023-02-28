@@ -1,10 +1,31 @@
 .searchScreen{
     height: 100vh;
+    width: 100vw;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: .5fr repeat(4, 1fr);
     grid-column-gap: .5vmin;
     grid-row-gap: .5vmin;
     font-size: calc(10px + 2vmin);
     color: white;
+}
+.searchAndSet{ 
+    grid-area: 1 / 2 / 2 / 6; 
+    border-bottom: 1vmin solid #a8754e;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+}
+  
+.recipeList {
+    grid-area: 2 / 2 / 6 / 6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow: auto;
 }

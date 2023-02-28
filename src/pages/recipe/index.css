@@ -1,13 +1,14 @@
 .recipeScreen{
     height: 100%;
     display: flex;
-    font-size: calc(10px + 2vmin);
+    font-size: calc(10px + 1vmin);
     color: white;
     flex-direction: column;
     flex-wrap: nowrap;
     align-content: center;
     justify-content: space-between;
     align-items: center;
+    text-align: left;
 }
 
 .ingredientList{
