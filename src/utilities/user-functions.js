@@ -27,3 +27,12 @@ export const getUserFromSession = async () => {
         return false
     }
 }
+
+export const addFavorite = async (recipe) => {
+    let serverResponse = await axios({
+        method: 'POST',
+        url: '/users/addFav',
+        data: recipe
+    })
+    return serverResponse
+}

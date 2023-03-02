@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const favoriteSchema = require('./favoriteSchema')
 
 const userSchema = new mongoose.Schema({
     email: {
@@ -16,6 +17,7 @@ const userSchema = new mongoose.Schema({
         required: true,
         select: false,
     },
+    favorites: [favoriteSchema]
 },
 {
     timestamps:true,

@@ -70,6 +70,16 @@ app.post('/users/signup', async (req, res) => {
     res.json('signed up')
 });
 
+app.post('/users/addFav', async (req,res) => {
+    let user = req.session.passport.user._doc._id
+    let mongoUser = await User.findById(user)
+    console.log(mongoUser)
+    console.log(req.body)
+    mongoUser.favorites.push({recipe: req.body})
+    mongoUser.save()
+    res.json(mongoUser)
+})
+
 
 app.put('/users/login', async (req, res, next) => {
 
