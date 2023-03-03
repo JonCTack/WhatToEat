@@ -3,7 +3,7 @@ import React, { useContext, useState } from 'react'
 import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { AppContext } from '../../contexts/app_context'
-import { addFavorite } from '../../utilities/user-functions'
+import { addFavorite, removeFavorite } from '../../utilities/user-functions'
 import './index.css'
 
 const Recipe = () => {
@@ -34,7 +34,8 @@ const Recipe = () => {
             addFavorite(recipeInfo)
             setIsFavorite(true)
         }else {
-            
+            removeFavorite(recipeInfo)
+            setIsFavorite(false)
         }
     }
 

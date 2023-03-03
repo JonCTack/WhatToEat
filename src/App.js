@@ -6,6 +6,8 @@ import { getUserFromSession } from './utilities/user-functions';
 import { AppContext } from './contexts/app_context';
 import { useContext, useEffect, useState } from 'react';
 import Auth from './pages/auth';
+import Favorites from './pages/favorites';
+import Nav from './components/Nav';
 
 function App() {
   let { user, setUser } = useContext(AppContext)
@@ -27,8 +29,10 @@ function App() {
     <div className="App">
   {user? 
     <div className="App">
+    <Nav/>
     <Routes>
       <Route path='/recipe/:recipeId' element={<Recipe/>}/>
+      <Route path='/favorites' element={<Favorites/>}/>
       <Route path='/*' element={<Search/>}/>
     </Routes>
   </div>

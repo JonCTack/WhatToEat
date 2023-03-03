@@ -2,7 +2,7 @@
     height: 100%;
     display: flex;
     font-size: calc(10px + 1vmin);
-    color: white;
+    color: black;
     flex-direction: column;
     flex-wrap: nowrap;
     align-content: center;

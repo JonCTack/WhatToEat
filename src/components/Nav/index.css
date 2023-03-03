@@ -1,0 +1,18 @@
+.siteNav{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-end;
+    background-color: #a8754e;
+}
+
+.navButton{
+    background-color: blanchedalmond;
+    border: 1vmin solid #a8754e;
+    padding: 1vmin;
+}
+.navButton:hover{
+    background-color: rgb(245, 197, 124);
+    padding: 1vmin;
+    cursor: pointer;
+}

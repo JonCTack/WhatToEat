@@ -80,6 +80,20 @@ app.post('/users/addFav', async (req,res) => {
     res.json(mongoUser)
 })
 
+app.delete('/users/delFav', async (req,res) => {
+    let user = req.session.passport.user._doc._id
+    let mongoUser = await User.findById(user)
+    console.log(mongoUser)
+    console.log(req.body)
+    const i = mongoUser._doc.favorites.findIndex(e => e.recipe.id == req.body.id)
+    console.log(i)
+    mongoUser.favorites.splice(i,1)
+    console.log(mongoUser.favorites)
+    mongoUser.markModified('favorites')
+    mongoUser.save()
+    res.json(mongoUser)
+})
+
 
 app.put('/users/login', async (req, res, next) => {
 
@@ -107,6 +121,20 @@ app.put('/users/login', async (req, res, next) => {
     })(req, res, next);
 });
 
+app.post('/users/logout', async (req, res) => {
+    if (req.session) {
+      req.session.destroy(err => {
+        if (err) {
+          res.status(400).send('Unable to log out')
+        } else {
+         res.clearCookie('connect.sid')
+         res.redirect('/')
+        }
+      });
+    } else {
+      res.end()
+    }
+  });
 
 
 app.get(`/get_recipe/:ingredients`, async (req, res) => {
