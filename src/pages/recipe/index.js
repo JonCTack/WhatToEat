@@ -9,14 +9,14 @@ import './index.css'
 const Recipe = () => {
 
     const { recipeId } = useParams();
-    const { user } = useContext(AppContext);
+    const { user, setUser } = useContext(AppContext);
     const [recipeInfo, setRecipeInfo] = useState({});
     const [isFavorite, setIsFavorite] = useState(false);
 
     useEffect(()=> {
-        const i = user._doc.favorites.findIndex(e => e.recipe.id == recipeId)
+        const i = user.favorites.findIndex(e => e.recipe.id == recipeId)
         if (i>-1){
-            setRecipeInfo(user._doc.favorites[i].recipe);
+            setRecipeInfo(user.favorites[i].recipe);
             console.log("found favorite :", recipeInfo);
             setIsFavorite(true);
         } else {
@@ -31,11 +31,14 @@ const Recipe = () => {
 
     const handleFavorite = async () => {
         if(isFavorite === false){
-            addFavorite(recipeInfo)
+            let newUser = await addFavorite(recipeInfo)
             setIsFavorite(true)
+            console.log(newUser)
+            setUser(newUser.data)
         }else {
-            removeFavorite(recipeInfo)
+            let newUser = await removeFavorite(recipeInfo)
             setIsFavorite(false)
+            setUser(newUser.data)
         }
     }
 

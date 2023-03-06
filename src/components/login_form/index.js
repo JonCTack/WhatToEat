@@ -27,7 +27,7 @@ const Login = () => {
         let response = await logIn(formState)
 
         let user = await getUserFromSession()
-        setUser(user)
+        setUser(user._doc)
         }
     
     return (

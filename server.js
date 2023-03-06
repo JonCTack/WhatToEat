@@ -44,7 +44,6 @@ app.use(session({
     saveUninitialized: true,
     cookie: { originalMaxAge: 3600000 }
 }))
-
 app.use(express.static(path.join(__dirname, 'build')));
 
 
