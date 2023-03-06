@@ -8,11 +8,11 @@
 
 .navButton{
     background-color: blanchedalmond;
-    border: 1vmin solid #a8754e;
-    padding: 1vmin;
+    border-radius: 4px;
+    padding: .5vmin;
+    margin: 1vmin;
 }
 .navButton:hover{
     background-color: rgb(245, 197, 124);
-    padding: 1vmin;
     cursor: pointer;
 }

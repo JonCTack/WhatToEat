@@ -71,13 +71,14 @@ app.post('/users/signup', async (req, res) => {
 });
 
 app.post('/users/addFav', async (req,res) => {
+    if(req.session){ 
     let user = req.session.passport.user._doc._id
     let mongoUser = await User.findById(user)
     console.log(mongoUser)
     console.log(req.body)
     mongoUser.favorites.push({recipe: req.body})
     mongoUser.save()
-    res.json(mongoUser)
+    res.json(mongoUser)}
 })
 
 app.delete('/users/delFav', async (req,res) => {

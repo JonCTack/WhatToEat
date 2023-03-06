@@ -22,7 +22,7 @@ const Nav = () => {
         
 
     return (
-    <nav className='siteNav'>
+    <nav className='siteNav navSpace'>
         <div className='navButton' onClick={() => handleClick('')}>Search</div>
         <div className='navButton' onClick={() => handleClick('favorites')}>Favorites</div>
         <div className='navButton' onClick={() => handleLogOut()}>Log Out</div>

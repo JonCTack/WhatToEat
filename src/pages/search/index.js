@@ -8,7 +8,7 @@ import './index.css'
 
 const Search = () => {
   return (
-    <div className='searchScreen'>
+    <div className='searchScreen pageSpace'>
         <IngredientInput/>
     <div className='searchAndSet'>
      <SetIngredients/>

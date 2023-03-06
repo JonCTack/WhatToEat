@@ -1,13 +1,36 @@
 .App {
   text-align: center;
-  background-color: #dbb191;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+  background: rgb(190,156,131);
+  background: radial-gradient(circle, rgb(190, 150, 122) 15%, rgba(219,177,145,1) 100%);
+  height: 100vh;
+  display: grid;
+  grid-template-columns: .2fr repeat(4, 1fr);
+  grid-template-rows: .2fr repeat(4, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
   font-size: calc(10px + 2vmin);
   color: black;
 }
 
+.loggedApp{
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: .2fr repeat(4, 1fr);
+  grid-template-rows: .2fr repeat(4, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px; 
+}
+
+.navSpace{
+  grid-area: 1 / 1 / 2 / 6;
+}
+
+.pageSpace{
+  grid-area: 2 / 1 / 6 / 6;
+}
+
+.authSpace{
+   grid-area: 1 / 1 / 6 / 6; 
+}
 

@@ -1,14 +1,57 @@
 .recipeScreen{
-    height: 100%;
-    display: flex;
     font-size: calc(10px + 1vmin);
     color: black;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    text-align: left;
+}
+
+.recipeTitle{
+    grid-area: 1 / 1 / 2 / 7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgCard{
+    grid-area: 2 / 4 / 5 / 7;
+    display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    align-content: center;
-    justify-content: space-between;
     align-items: center;
-    text-align: left;
+    justify-content: center;
+}
+
+.imgCard img {
+    border-radius: 4px;
+}
+
+.ingCard{
+    grid-area: 2 / 1 / 5 / 4;
+    display: block;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    align-items: flex-start;
+    justify-content: center;
+    margin-left: 1vw;
+    overflow-y: auto;
+}
+
+.ingCard ul {
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    align-items: flex-start;
+    justify-content: center;
+}
+.recipeInstruct{
+    display:flex;
 }
 
 .ingredientList{

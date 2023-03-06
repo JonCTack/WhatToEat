@@ -11,9 +11,9 @@ const Auth = () => {
   }
 
   return (
-    <div className='authPage'>
+    <div className='authPage authSpace'>
       {isSignup ?
-      <SignUpForm/>
+      <SignUpForm setIsSignup={setIsSignup}/>
       :
       <Login/>
       }

@@ -28,7 +28,7 @@ function App() {
   return ( 
     <div className="App">
   {user? 
-    <div className="App">
+    <div className="loggedApp">
     <Nav/>
     <Routes>
       <Route path='/recipe/:recipeId' element={<Recipe/>}/>

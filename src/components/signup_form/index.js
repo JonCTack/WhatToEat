@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import {signUp} from "../../utilities/user-functions.js"
 
 export default class SignUpForm extends Component {
-    
     state = {
       name: '',
       email: '',
@@ -25,7 +24,7 @@ export default class SignUpForm extends Component {
         delete data.confirm;
         delete data.error;
         let response = await signUp(data);
-        
+        this.props.setIsSignup(false)
       }
     
     render() {

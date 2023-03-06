@@ -50,13 +50,19 @@ const Recipe = () => {
         }) :
         ingredientJSX = null
         return (
-        <div className="recipeScreen">
-            <h1>{recipe.title}</h1>
-            <img src={recipe.image} alt={recipe.title}/>
-            <button onClick={() => handleFavorite()}>{isFavorite? "Unfavorite" : "Favorite" }</button>
-            {ingredientJSX}
-            <div dangerouslySetInnerHTML={{__html: recipe.instructions}}></div>
-            <div className="recipeSummary" dangerouslySetInnerHTML={{__html: recipe.summary}}></div>
+        <div className="recipeScreen pageSpace">
+            <h1 className='recipeTitle'>{recipe.title}</h1>
+            <div className="imgCard">
+                <img src={recipe.image} alt={recipe.title}/>
+                <button onClick={() => handleFavorite()}>{isFavorite? "Unfavorite" : "Favorite" }</button>
+            </div>
+            <div className='ingCard'>
+                <ul>
+                {ingredientJSX}
+                </ul>
+                <div className="recipeInstruct" dangerouslySetInnerHTML={{__html: recipe.instructions}}></div>
+                <div className="recipeSummary" dangerouslySetInnerHTML={{__html: recipe.summary}}></div>
+            </div>
         </div>
         )
     }
