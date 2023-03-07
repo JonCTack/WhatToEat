@@ -16,7 +16,7 @@ function App() {
   useEffect( ()=> {
     const getSession = async () => {
       let userResponse = await getUserFromSession()
-      setUser(userResponse)
+      setUser(userResponse._doc)
     } 
       getSession()
       //this prevents the log in page being shown to a logged in user
