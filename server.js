@@ -73,8 +73,6 @@ app.post('/users/addFav', async (req,res) => {
     if(req.session){ 
     let user = req.session.passport.user._doc._id
     let mongoUser = await User.findById(user)
-    console.log(mongoUser)
-    console.log(req.body)
     mongoUser.favorites.push({recipe: req.body})
     mongoUser.save()
     res.json(mongoUser)}
@@ -83,12 +81,8 @@ app.post('/users/addFav', async (req,res) => {
 app.delete('/users/delFav', async (req,res) => {
     let user = req.session.passport.user._doc._id
     let mongoUser = await User.findById(user)
-    console.log(mongoUser)
-    console.log(req.body)
     const i = mongoUser._doc.favorites.findIndex(e => e.recipe.id == req.body.id)
-    console.log(i)
     mongoUser.favorites.splice(i,1)
-    console.log(mongoUser.favorites)
     mongoUser.markModified('favorites')
     mongoUser.save()
     res.json(mongoUser)
@@ -146,7 +140,6 @@ app.get(`/get_instructions/:recipeId`, async (req, res) => {
     let recipeId = req.params.recipeId
     let apiInfoResponse = await axios(`https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${process.env.APIKEY}&includeNutrition=false`)
     // let apiInstructResponse = await axios(`https://api.spoonacular.com/recipes/${recipeId}/analyzedInstructions?apiKey=${process.env.APIKEY}`)
-    console.log(apiInfoResponse.data)
     res.json(apiInfoResponse.data)
 })
 

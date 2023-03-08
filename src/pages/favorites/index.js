@@ -15,7 +15,6 @@ const Favorites = () => {
       }
 
     let favJSX 
-    console.log(user)
     let favoriteArray = user.favorites
     if (favoriteArray) {
         favJSX = favoriteArray.map(el => {
@@ -24,8 +23,6 @@ const Favorites = () => {
             <img className="favImg" src={el.recipe.image} onClick={() => handleClick(el.recipe.id)}/>
         </div>)
       })
-      console.log(favJSX)
-      console.log(favoriteArray)
     } else {
       return (<div>you have yet to set any favorites</div>)
     }

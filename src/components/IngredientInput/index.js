@@ -16,8 +16,8 @@ const IngredientInput = () => {
 let ingredientsJSX = ingredients.map((el, i) => {
   //the ingredients array is a user input of just ingredients 
     return (<div key={JSON.stringify(el)} className='ingredientDiv'>
-                {el.toLowerCase()}
-                <button className='removeIngredient' onClick={(el) => removeButton(i)}>-</button>
+                {el.toUpperCase()}
+                <button className='removeIngredient' onClick={(el) => removeButton(i)}>X</button>
             </div>)
 })
 

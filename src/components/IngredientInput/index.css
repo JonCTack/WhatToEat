@@ -8,6 +8,9 @@
     align-content: center;
     justify-content: flex-start;
     align-items: center;    
+    margin: 1vmin 0px;
+    border-radius: 0px 1vmin 1vmin 0px;
+    overflow-y: auto;
 }
 
 .ingredientDiv{
@@ -17,6 +20,7 @@
     padding: .5vmin;
     text-align: center;
     font-size: 2.5vw;
+    font-weight: bold;
     color: black;
     background-color: antiquewhite;
     border: .5vmin solid #845a3b;
@@ -31,8 +35,10 @@
 
 .removeIngredient{
     background-color:brown;
+    color: white;
     border: .1vmin solid #432b19;
     height: 50%;
+    width: 10%;
     border-radius: 4px;
 }
 

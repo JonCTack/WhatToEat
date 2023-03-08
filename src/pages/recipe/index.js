@@ -17,13 +17,11 @@ const Recipe = () => {
         const i = user.favorites.findIndex(e => e.recipe.id == recipeId)
         if (i>-1){
             setRecipeInfo(user.favorites[i].recipe);
-            console.log("found favorite :", recipeInfo);
             setIsFavorite(true);
         } else {
         const loadRecipe = async () => {
             let response = await axios(`/get_instructions/${recipeId}`)
             setRecipeInfo(response.data)
-            console.log(response)
         }
         loadRecipe()
         }
@@ -33,7 +31,6 @@ const Recipe = () => {
         if(isFavorite === false){
             let newUser = await addFavorite(recipeInfo)
             setIsFavorite(true)
-            console.log(newUser)
             setUser(newUser.data)
         }else {
             let newUser = await removeFavorite(recipeInfo)

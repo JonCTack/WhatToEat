@@ -6,9 +6,7 @@ const SearchButton = () => {
     const {ingredients, setRecipes} = useContext(AppContext)
  
     const searchRecipes = async () => {
-        console.log(ingredients.toString())
         let response = await axios(`/get_recipe/${ingredients.toString()}`)
-        console.log(response)
         setRecipes(response.data)
     }
 
