@@ -11,6 +11,7 @@
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
+    "memorystore": "^1.6.7",
     "mongoose": "^7.0.0",
     "morgan": "^1.10.0",
     "passport": "^0.6.0",

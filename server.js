@@ -7,6 +7,7 @@ const cors = require('cors');
 const bcrypt = require('bcrypt')
 const passport = require('passport')
 const session = require('express-session')
+const MemoryStore = require('memorystore')(session)
 const initPassport = require('./config/passport-config')
 
 const User = require('./models/user')
@@ -42,7 +43,10 @@ app.use(session({
     secret: process.env.SESSEC,
     resave: true,
     saveUninitialized: true,
-    cookie: { originalMaxAge: 3600000 }
+    cookie: { originalMaxAge: 3600000 },
+    store: new MemoryStore({
+        checkPeriod: 86400000
+      }),
 }))
 app.use(express.static(path.join(__dirname, 'build')));
 

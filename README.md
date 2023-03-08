@@ -18,6 +18,7 @@ This project used [Spoonacular's food API](https://spoonacular.com/food-api) to 
 - Bcrypt
 - Cors
 - Express-Session
+- MemoryStore
 - Morgan
 - Passport
 - Passport-Local
